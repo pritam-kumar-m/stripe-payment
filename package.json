@@ -1,0 +1,50 @@
+{
+  "name": "stripe-payment",
+  "version": "1.0.0",
+  "description": "A Node.js project for integrating Stripe payment processing.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "lint": "eslint 'src/**/*.{js,jsx}'",
+    "format": "prettier --write 'src/**/*.{js,jsx}'",
+    "test": "jest",
+    "test:watch": "jest --watch"
+  },
+  "keywords": [
+    "stripe",
+    "payment",
+    "nodejs",
+    "integration",
+    "api"
+  ],
+  "author": "Pritam Kumar <pritamacer@gmail.com>",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pritam-kumar-m/stripe-payment.git"
+  },
+  "bugs": {
+    "url": "https://github.com/pritam-kumar-m/stripe-payment/issues"
+  },
+  "homepage": "https://github.com/pritam-kumar-m/stripe-payment#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.1",
+    "stripe": "^17.4.0",
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "dotenv": "^16.1.0",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.7",
+    "prettier": "^3.0.3",
+    "supertest": "^6.3.0"
+  },
+  "engines": {
+    "node": ">=22.11.0"
+  }
+}

@@ -1,6 +1,7 @@
 const express = require("express");
 const paymentRoutes = require("./routes/paymentRoutes");
 const errorHandler = require("./middlewares/errorHandler");
+const customerRoute=require("./routes/customerRouters");
 
 const app = express();
 
@@ -16,6 +17,7 @@ app.get("/", (req, res) => {
 
 // Routes
 app.use("/api/payments", paymentRoutes);
+app.use("/api/customer", customerRoute);
 
 // Error handling
 app.use(errorHandler);

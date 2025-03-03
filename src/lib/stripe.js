@@ -1,4 +1,4 @@
-const Stripe = require('stripe');
+const Stripe = require("stripe");
 
 /**
  * Initialize Stripe client with API key
@@ -7,7 +7,7 @@ const Stripe = require('stripe');
  */
 const initializeStripe = (apiKey) => {
   if (!apiKey) {
-    throw new Error('Stripe API Key is required');
+    throw new Error("Stripe API Key is required");
   }
   return new Stripe(apiKey);
 };
@@ -22,10 +22,10 @@ const stripe = initializeStripe(process.env.STRIPE_API_KEY);
 const createCustomer = async (body) => {
   try {
     const customer = await stripe.customers.create(body);
-    console.log('Customer created successfully:', customer.id);
+    console.log("Customer created successfully:", customer.id);
     return customer;
   } catch (error) {
-    console.error('Error creating customer:', error.message);
+    console.error("Error creating customer:", error.message);
     throw error;
   }
 };
@@ -38,10 +38,10 @@ const createCustomer = async (body) => {
 const getCustomer = async (customerId) => {
   try {
     const customer = await stripe.customers.retrieve(customerId);
-    console.log('Customer retrieved:', customer.id);
+    console.log("Customer retrieved:", customer.id);
     return customer;
   } catch (error) {
-    console.error('Error retrieving customer:', error.message);
+    console.error("Error retrieving customer:", error.message);
     throw error;
   }
 };
@@ -55,10 +55,10 @@ const getCustomer = async (customerId) => {
 const updateCustomer = async (customerId, body) => {
   try {
     const customer = await stripe.customers.update(customerId, body);
-    console.log('Customer updated successfully:', customer.id);
+    console.log("Customer updated successfully:", customer.id);
     return customer;
   } catch (error) {
-    console.error('Error updating customer:', error.message);
+    console.error("Error updating customer:", error.message);
     throw error;
   }
 };
@@ -71,10 +71,10 @@ const updateCustomer = async (customerId, body) => {
 const deleteCustomer = async (customerId) => {
   try {
     const confirmation = await stripe.customers.del(customerId);
-    console.log('Customer deleted successfully:', confirmation.id);
+    console.log("Customer deleted successfully:", confirmation.id);
     return confirmation;
   } catch (error) {
-    console.error('Error deleting customer:', error.message);
+    console.error("Error deleting customer:", error.message);
     throw error;
   }
 };
@@ -85,5 +85,3 @@ module.exports = {
   updateCustomer,
   deleteCustomer,
 };
-
-

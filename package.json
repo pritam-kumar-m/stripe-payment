@@ -10,7 +10,7 @@
     "format": "prettier --write 'src/**/*.{js,jsx}'",
     "test": "jest",
     "test:watch": "jest --watch",
-    "build": "npm run build --prefix client"
+    "build": "echo 'No build step required for this Express.js app'"
   },
   "keywords": [
     "stripe",
